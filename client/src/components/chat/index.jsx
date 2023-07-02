@@ -12,11 +12,11 @@ import AiDate from '@/components/customMessageForms/AiDate';
 import AiWork from '@/components/customMessageForms/AiWork';
 import AiAssist from '@/components/customMessageForms/AiAssist';
 
-function Chat() {
+function Chat({user, secret}) {
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
-    "testuser",
-    "1234"
+    user,
+    secret
   )
 
   return (
