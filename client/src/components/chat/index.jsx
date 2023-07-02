@@ -7,6 +7,9 @@ import {
 import Header from "@/components/customHeader";
 import StandardMessageForm from "@/components/customMessageForms/StandardMessageForm"
 import Ai from '@/components/customMessageForms/Ai';
+import AiFriend from '@/components/customMessageForms/AiFriend';
+import AiDate from '@/components/customMessageForms/AiDate';
+import AiWork from '@/components/customMessageForms/AiWork';
 
 function Chat() {
   const chatProps = useMultiChatLogic(
@@ -25,6 +28,15 @@ function Chat() {
         renderMessageForm={(props) => {
           if (chatProps.chat?.title.startsWith("AiChat_")) {
             return <Ai props={props} activeChat={chatProps.chat} />
+          }
+          if (chatProps.chat?.title.startsWith("AiFriend_")) {
+            return <AiFriend props={props} activeChat={chatProps.chat} />
+          }
+          if (chatProps.chat?.title.startsWith("AiDate_")) {
+            return <AiDate props={props} activeChat={chatProps.chat} />
+          }
+          if (chatProps.chat?.title.startsWith("AiWork_")) {
+            return <AiWork props={props} activeChat={chatProps.chat} />
           }
           return (
             <StandardMessageForm props={props} activeChat={chatProps.chat} />

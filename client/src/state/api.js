@@ -12,9 +12,41 @@ export const api = createApi({
         url: "openai/text",
         method: "POST",
         body: payload,
-      })
-    })
+      }),
+    }),
+    postAiFriend: build.mutation({
+      query: (payload) => ({
+        // url endpoint being called
+        url: "openai/friend",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+    postAiDate: build.mutation({
+      query: (payload) => ({
+        // url endpoint being called
+        url: "openai/date",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+    postAiWork: build.mutation({
+      query: (payload) => ({
+        // url endpoint being called
+        url: "openai/work",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+    postAiAssist: build.mutation({
+      query: (payload) => ({
+        // url endpoint being called
+        url: "openai/assist",
+        method: "POST",
+        body: payload,
+      }),
+    }),
   })
 })
 
-export const { usePostAiTextMutation } = api;
+export const { usePostAiTextMutation, usePostAiFriendMutation, usePostAiDateMutation, usePostAiWorkMutation, usePostAiAssistMutation } = api;
