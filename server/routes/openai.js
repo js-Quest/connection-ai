@@ -121,6 +121,7 @@ router.post("/date", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 router.post("/work", async (req, res) => {
   try {
     const { text, activeChatId } = req.body;
@@ -148,6 +149,29 @@ router.post("/work", async (req, res) => {
         },
       }
     );
+
+    res.status(200).json({ text: response.data.choices[0].message.content });
+  } catch (error) {
+    console.error("error", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.post("/assist", async (req, res) => {
+  try {
+    const { text } = req.body;
+
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a helpful assistant that serves to only complete user's thoughts or sentences.",
+        }, // this represents the bot and what role they will assume
+        { role: "user", content: `Finish my thought: ${text}` }, // the message that the user sends
+      ],
+    });
 
     res.status(200).json({ text: response.data.choices[0].message.content });
   } catch (error) {

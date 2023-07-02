@@ -10,6 +10,7 @@ import Ai from '@/components/customMessageForms/Ai';
 import AiFriend from '@/components/customMessageForms/AiFriend';
 import AiDate from '@/components/customMessageForms/AiDate';
 import AiWork from '@/components/customMessageForms/AiWork';
+import AiAssist from '@/components/customMessageForms/AiAssist';
 
 function Chat() {
   const chatProps = useMultiChatLogic(
@@ -37,6 +38,9 @@ function Chat() {
           }
           if (chatProps.chat?.title.startsWith("AiWork_")) {
             return <AiWork props={props} activeChat={chatProps.chat} />
+          }
+          if (chatProps.chat?.title.startsWith("AiAssist_")) {
+            return <AiAssist props={props} activeChat={chatProps.chat} />
           }
           return (
             <StandardMessageForm props={props} activeChat={chatProps.chat} />
