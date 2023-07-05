@@ -93,12 +93,12 @@ router.post("/date", async (req, res) => {
         {
           role: "system",
           content:
-            "You are a thoughtful and insightful assistant that provides an exciting and engaging question for someone on a date",
+            "You are a thoughtful and insightful assistant that provides an fun and engaging question for someone on a date",
         }, // this represents the bot and what role they will assume
         { role: "user", content: text }, // the message that the user sends
       ],
-      frequency_penalty: 1.5,
-      presence_penalty: 1,
+      frequency_penalty: 1,
+      presence_penalty: 0.5,
       temperature: 0.8,
       top_p: 1
     });
