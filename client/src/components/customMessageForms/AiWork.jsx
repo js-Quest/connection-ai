@@ -3,7 +3,8 @@ import MessageFormUI from './MessageFormUI';
 import { usePostAiWorkMutation } from '@/state/api';
 
 function AiWork({ props, activeChat }) {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
+  const message = "Give me a Question!"
   const [attachment, setAttachment] = useState("");
   const [trigger] = usePostAiWorkMutation();
 
@@ -26,7 +27,7 @@ function AiWork({ props, activeChat }) {
 
     props.onSubmit(form); // submit message
     trigger(form); //trigger api call to openAI
-    setMessage("");
+    // setMessage("");
     setAttachment("");
   };
   return (

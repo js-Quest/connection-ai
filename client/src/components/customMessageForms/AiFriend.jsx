@@ -3,7 +3,8 @@ import MessageFormUI from './MessageFormUI';
 import { usePostAiFriendMutation } from '@/state/api';
 
 function AiFriend({ props, activeChat }) {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
+  const message = "Give me a Question!"
   const [attachment, setAttachment] = useState("");
   const [trigger] = usePostAiFriendMutation();
 

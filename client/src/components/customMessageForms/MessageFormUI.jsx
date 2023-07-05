@@ -50,7 +50,7 @@ function MessageFormUI({
           )}
         </div>
         <div className="message-form-icons">
-          <Dropzone
+          {/* <Dropzone
             acceptedFiles=".jpg,.jpeg,.png"
             multiple={false}
             noClick={true}
@@ -68,7 +68,7 @@ function MessageFormUI({
                 />
               </div>
             )}
-          </Dropzone>
+          </Dropzone> */}
           <hr className='vertical-line' />
           <PaperAirplaneIcon
             className="message-form-icon-airplane"

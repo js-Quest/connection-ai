@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { usePostLoginMutation, usePostSignUpMutation } from '@/state/api';
 import Logo from "@/assets/ccNoBG.png"
-import { useNavigate } from 'react-router-dom';
+
 
 //setUser and setSecret from App.jsx
 function Login({ setUser, setSecret }) {
@@ -9,8 +9,7 @@ function Login({ setUser, setSecret }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [triggerLogin, resultLogin] = usePostLoginMutation();
-  const [triggerSignUp, resultSignup] = usePostSignUpMutation();
-  const navigate = useNavigate();
+  const [triggerSignUp] = usePostSignUpMutation();
 
   const handleLogin = () => {
     triggerLogin({ username, password })

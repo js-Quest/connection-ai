@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
   useMultiChatLogic,
   MultiChatSocket, 
@@ -11,8 +11,10 @@ import AiFriend from '@/components/customMessageForms/AiFriend';
 import AiDate from '@/components/customMessageForms/AiDate';
 import AiWork from '@/components/customMessageForms/AiWork';
 import AiAssist from '@/components/customMessageForms/AiAssist';
+// import CustomChatList from './customChatList';
 
 function Chat({user, secret}) {
+
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
     user,
@@ -27,19 +29,19 @@ function Chat({user, secret}) {
         style={{ height: "100vh"}}
         renderChatHeader={(chat) => <Header chat={chat} />}
         renderMessageForm={(props) => {
-          if (chatProps.chat?.title.startsWith("AiChat_")) {
+          if (chatProps.chat?.title.startsWith("AiChat")) {
             return <Ai props={props} activeChat={chatProps.chat} />
           }
-          if (chatProps.chat?.title.startsWith("AiFriend_")) {
+          if (chatProps.chat?.title.startsWith("AiFriend")) {
             return <AiFriend props={props} activeChat={chatProps.chat} />
           }
-          if (chatProps.chat?.title.startsWith("AiDate_")) {
+          if (chatProps.chat?.title.startsWith("AiDate")) {
             return <AiDate props={props} activeChat={chatProps.chat} />
           }
-          if (chatProps.chat?.title.startsWith("AiWork_")) {
+          if (chatProps.chat?.title.startsWith("AiWork")) {
             return <AiWork props={props} activeChat={chatProps.chat} />
           }
-          if (chatProps.chat?.title.startsWith("AiAssist_")) {
+          if (chatProps.chat?.title.startsWith("AiAssist")) {
             return <AiAssist props={props} activeChat={chatProps.chat} />
           }
           return (

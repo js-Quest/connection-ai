@@ -3,7 +3,8 @@ import MessageFormUI from './MessageFormUI';
 import { usePostAiDateMutation } from '@/state/api';
 
 function AiDate({ props, activeChat }) {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
+  const message = "Give me a Question!"
   const [attachment, setAttachment] = useState("");
   const [trigger] = usePostAiDateMutation();
 

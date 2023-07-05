@@ -15,7 +15,7 @@ router.post("/text", async (req, res) => {
       messages: [
         { 
           role: "system", 
-          content: "You are an inquisitive person that asks memorable questions with the goal to get someone to open up to you, but do not ask about childhood." 
+          content: "You are a helpful assistant." 
         }, // role of the bot
         { role: "user", content: text }, // the message that the user sends
       ],
@@ -93,7 +93,7 @@ router.post("/date", async (req, res) => {
         {
           role: "system",
           content:
-            "You are a thoughtful and insightful assistant that provides an fun and engaging question for someone on a date",
+            "You are a thoughtful and insightful assistant that provides a fun and engaging question for someone on a date",
         }, // this represents the bot and what role they will assume
         { role: "user", content: text }, // the message that the user sends
       ],
